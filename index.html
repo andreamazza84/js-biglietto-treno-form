@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Ticket calculator</title>
+</head>
+<body>
+  <div class="container">
+    <section id="calcolo-biglietto">
+      <h2>calcola il prezzo del biglietto</h2>
+      <div class="card-rounded">
+        <div class="row">
+          <div class="col">
+            <label for="name">Nome e Cognome</label>
+            <input type="text" name="name" class="sel" id="full-name">
+          </div>
+          <div class="col">
+            <label for="km">km da percorrere</label>
+            <input type="number" name="km" class="sel" id="percorso">
+          </div>
+          <div class="col">
+            <label for="fascia">Fascia d'età</label>
+            <select name="fascia" class="sel" id="fascia">
+              <option value="minorenne">Minorenne</option>
+              <option value="maggiorenne">Maggiorenne</option>
+              <option value="over65">Over65</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <button id="button_genera" class="btn">Genera</button>
+          <button id="button_annulla" class="btn">Annulla</button>
+        </div>
+      </div>
+    </section>
+    <!-- /#calcolo-biglietto -->
+    <section id="biglietto">
+      <h2>il tuo biglietto</h2>
+      <div class="card">
+        <h3>dettaglio passeggeri</h3>
+        <div class="row titoli-biglietto">
+          <div class="col">nome passeggero:</div>
+          <div class="col">offerta:</div>
+          <div class="col">carrozza:</div>
+          <div class="col">codice CP:</div>
+          <div class="col">costo biglietto:</div>
+        </div>
+        <div class="row dati-biglietto">
+          <div class="col" id="nome-passeggero">Andrea Mazza</div>
+          <div class="col" id="sconto">Sconto 40%</div>
+          <div class="col" id="carrozza">Carrozza 7</div>
+          <div class="col" id="codice-cp">952952</div>
+          <div class="col" id="ticket-price">26</div>
+        </div>
+      </div>
+    </section>
+    <!-- /#biglietto -->
+
+  </div>
+  <!-- ******** SCRIPT ********* -->
+  <script src="assets/main.js"></script>
+</body>
+</html>

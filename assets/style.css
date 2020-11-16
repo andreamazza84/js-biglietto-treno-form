@@ -1,0 +1,124 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General */
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #212121;
+}
+h2{
+  font-size: 28px;
+  color: white;
+  text-transform: uppercase;
+  margin: 10px auto;
+  text-align: center;
+}
+h3{
+  /* color: black; */
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+strong{
+  font-weight: 700;
+}
+label{
+  color: #b91450;
+  margin: 20px auto;
+}
+/* /General */
+/* Button */
+.btn{
+  font-size: 16px;
+  font-weight: 700;
+  color: #b91450;
+  background-color: #ccc;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5%;
+  margin: 0 15px;
+}
+.btn:hover{
+  border: 1px solid #555;
+}
+.sel{
+  width: 70%;
+  height: 30px;
+  font-size: 16px;
+  border: 1px solid #b91450;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 10px;
+}
+/* /Button */
+/* Containers */
+.container{
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+  background-color: #b91450;
+}
+.card-rounded{
+  width: 80%;
+  margin: auto;
+  padding: 10px 50px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 1px 0 10px black;
+}
+.card{
+  width: 80%;
+  margin: auto;
+  padding: 10px 50px;
+  background-color: white;
+}
+.row{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+}
+/* /Containers */
+
+/* #calcolo biglietto */
+#calcolo-biglietto .col{
+  width: calc(100% / 3);
+  align-items: center;
+}
+
+/* #biglietto */
+#biglietto .row{
+  height: 50px;
+  justify-content: left;
+}
+#biglietto .row:first-of-type{
+  margin-bottom: 0;
+  border-top: 1px solid #808080;
+}
+#biglietto .row:last-of-type{
+  margin-top: 0;
+  border-bottom: 1px solid #808080;
+}
+#biglietto .row .col:first-child{
+  background-color: #808080;
+}
+#biglietto .col{
+  width: calc(100% / 5);
+  align-items: left;
+  padding: 10px 10px;
+}
+#biglietto .row:first-of-type .col:first-child{
+  text-transform: uppercase;
+}
+#biglietto .row:last-of-type .col:first-child{
+  font-weight: 700;
+}
+#biglietto .titoli-biglietto{
+  font-weight: 700;
+  text-transform: capitalize;
+}
