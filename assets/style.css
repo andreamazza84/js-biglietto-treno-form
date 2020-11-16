@@ -27,13 +27,13 @@ label{
   color: #b91450;
   margin: 20px auto;
 }
+/* ** Elimina frecce up e down di default ** */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
@@ -63,6 +63,7 @@ input[type=number] {
   border-radius: 10px;
 }
 /* /Button */
+
 /* Containers */
 .container{
   width: 80%;
@@ -96,13 +97,17 @@ input[type=number] {
 }
 /* /Containers */
 
-/* #calcolo biglietto */
+/* section #calcolo biglietto */
 #calcolo-biglietto .col{
   width: calc(100% / 3);
   align-items: center;
 }
+/* /#calcolo biglietto */
 
-/* #biglietto */
+/* section #biglietto */
+#biglietto{
+  transition: opacity 1s;
+}
 #biglietto .row{
   height: 50px;
   justify-content: left;
@@ -120,7 +125,7 @@ input[type=number] {
 }
 #biglietto .col{
   width: calc(100% / 5);
-  align-items: left;
+  align-items: flex-start;
   padding: 10px 10px;
 }
 #biglietto .row:first-of-type .col:first-child{
@@ -133,3 +138,4 @@ input[type=number] {
   font-weight: 700;
   text-transform: capitalize;
 }
+/* /#biglietto */

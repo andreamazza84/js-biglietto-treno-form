@@ -5,25 +5,24 @@ var isNumber = function isNumber(){
   return typeof value === 'number' && isFinite();
 }
 
+//Genera Biglietto
 btnGenera.addEventListener("click", function() {
-  //genera Biglietto
 
-  //selezionare valore input
+  //Selezionare valore input
   var fullNameInput = document.getElementById('full-name');
   var kmInput = document.getElementById('percorso');
   var fasciaInput = document.getElementById('fascia');
-
 
   //La seguente separazione del valore consente di modificare altre proprietà
   var fullName = fullNameInput.value;
   var km = kmInput.value;
   var fascia = fasciaInput.value;
 
-  //calcolo biglietto treno
+  //Calcolo prezzo biglietto treno
   var costoPerKm = 0.21;
   var ticketPrice = costoPerKm * km;
 
-  // offerta
+  // Offerta
   var offer = 1;
   if (fascia == "minorenne"){
     offer = (1 - 0.2);
@@ -34,11 +33,12 @@ btnGenera.addEventListener("click", function() {
   // Applicazione dello sconto
   ticketPrice = ticketPrice * offer;
 
-  //Ora "offer" coincide con il valore dello sconto
+  //Ora "offer" coincide con il valore percentuale dello sconto
   offer = (1 - offer)*100;
 
   //Genera numero Carrozza
   var numberCarrozza = Math.ceil(Math.random() * 9) + 1;
+  //Numero causuale tra 90000 e 99999
   var codiceCp = Math.floor(Math.random() * 10000) + 90000;
 
   //Seleziono gli elementi dal documento
@@ -48,19 +48,19 @@ btnGenera.addEventListener("click", function() {
   var elCodice = document.getElementById('codice-cp');
   var elTicket = document.getElementById('ticket-price');
 
-
   //Inserimento dei dati nel biglietto
   elName.innerHTML = fullName;
   elSconto.innerHTML = "Sconto " + offer.toFixed(0) + "%";
   elCarrozza.innerHTML = numberCarrozza;
   elCodice.innerHTML = codiceCp;
-  elTicket.innerHTML = "€ " + ticketPrice.toFixed(2);
+  // Il prezzo viene sempre arrotondato a 5c€
+  elTicket.innerHTML = "€ " + (Math.round(ticketPrice / 0.05) * 0.05).toFixed(2);
   document.getElementById('biglietto').style.opacity = "1";
 });
 
 
+//Annulla
 btnAnnulla.addEventListener("click", function() {
-  //Annulla
   var fullNameInput = document.getElementById('full-name');
   var kmInput = document.getElementById('percorso');
   var fasciaInput = document.getElementById('fascia');
