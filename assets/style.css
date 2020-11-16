@@ -55,7 +55,7 @@ label{
 /* Containers */
 .container{
   width: 80%;
-  height: 100vh;
+  height: 800px;
   margin: auto;
   background-color: #b91450;
 }

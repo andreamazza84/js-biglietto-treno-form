@@ -21,29 +21,40 @@ btnGenera.addEventListener("click", function() {
   var ticketPrice = costoPerKm * km;
   console.log(ticketPrice);
 
+  // offerta
+  var offer = 1;
   if (fascia == "minorenne"){
     console.log("Applica uno scontro del 20%");
+    offer = (1 - 0.2);
   }
   else if (fascia =="over65"){
     console.log("Applica uno scontro del 40%");
+    offer = (1 - 0.4)
   }
+  // Applicazione dello sconto
+  ticketPrice = ticketPrice * offer;
 
-  //Seleziona gi elementi de
+  //Ora offer coincide con il valore dello sconto
+  offer = (1 - offer)*100;
+
+  //Genera numero Carrozza
+  var numberCarrozza = Math.ceil(Math.random() * 9) + 1;
+  var codiceCp = Math.floor(Math.random() * 9999) + 90000;
+
+  //Seleziono gli elementi dal documento
   var elName = document.getElementById('nome-passeggero');
   var elSconto = document.getElementById('sconto');
   var elCarrozza = document.getElementById('carrozza');
   var elCodice = document.getElementById('codice-cp');
   var elTicket = document.getElementById('ticket-price');
 
-  //Genera numero Carrozza
-  var numberCarrozza = Math.ceil(Math.random() * 9) + 1;
-  var codiceCp = Math.floor(Math.random() * (100000 - 90000)) + 90;
-  //Inserire i dati nel Biglietto
+
+  //Inserimento dei dati nel biglietto
   elName.innerHTML = fullName;
-  elSconto.innerHTML = offer;
-  elTicket.innerHTML = "€" + ticketPrice;
+  elSconto.innerHTML = "Sconto " + offer.toFixed(0) + "%";
   elCarrozza.innerHTML = numberCarrozza;
   elCodice.innerHTML = codiceCp;
+  elTicket.innerHTML = "€ " + ticketPrice;
   document.getElementById('biglietto').style.display = "block";
 });
 
